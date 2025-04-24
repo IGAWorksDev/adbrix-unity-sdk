@@ -1,0 +1,14 @@
+{
+    "name": "adbrix-unity-plugin",
+    "displayName": "Adbrix",
+    "description": "Adbrix Unity Plugin",
+    "version": "1.0.0",
+    "unity": "2019.4",
+	"homepage": "https://www.igaworks.com",
+	"author": {
+		"name": "IGAWorks",
+		"url": "https://github.com/IGAWorksDev/adbrix-unity-sdk"
+	},
+	"documentationUrl": "https://adbrix.gitbook.io/developer-guide/platform/unity",
+	"changelogUrl": "https://adbrix.gitbook.io/developer-guide/platform/unity/change-log"
+}
