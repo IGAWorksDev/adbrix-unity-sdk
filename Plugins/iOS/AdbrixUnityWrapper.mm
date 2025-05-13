@@ -44,4 +44,8 @@ void _adbrixBlockDeferredDeepLinkLaunch(void) {
     
 }
 
+void _adbrixATTAuthrized(bool isAuthorized) {
+    [[Adbrix shared] attAuthorized:isAuthorized];
+}
+
 }

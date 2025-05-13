@@ -45,5 +45,10 @@ public class AdbrixNotImplemented : IAdbrix
     {
         Debug.Log("[Adbrix] Dummy BlockDeferredDeepLinkLaunch called");
     }
+
+    public void ATTAuthrized(bool isAuthorized)
+    {
+        Debug.Log("[Adbrix] Dummy ATTAuthrized called");
+    }
 }
 }

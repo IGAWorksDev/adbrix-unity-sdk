@@ -11,5 +11,6 @@ namespace AdbrixPlugin {
         void EnableSDK();
         void DisableSDK();
         void BlockDeferredDeepLinkLaunch(AdbrixDeepLinkCallback callback);
+        void ATTAuthrized(bool isAuthorized);
     }
 }
