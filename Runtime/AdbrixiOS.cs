@@ -26,6 +26,9 @@ public class AdbrixiOS : IAdbrix {
     [DllImport("__Internal")]
     private static extern void _adbrixBlockDeferredDeepLinkLaunch();
 
+    [DllImport("__Internal")]
+    private static extern void _adbrixATTAuthorized(bool isAuthorized);
+
     private static readonly object _deeplinkLock = new object();
     private static AdbrixDeepLinkCallback _deeplinkCallback;
 
@@ -99,6 +102,10 @@ public class AdbrixiOS : IAdbrix {
             AdbrixDeepLink deepLink = AdbrixDeepLink.CreateFromJSON(deepLinkData);
             callback.OnAdbrixDeepLink(deepLink);
         }
+    }
+
+    public void ATTAuthorized(bool isAuthorized) {
+        _adbrixATTAuthorized(isAuthorized);
     }
 }
 }

@@ -606,12 +606,23 @@ namespace AdbrixPlugin
             {
                 if (value is float)
                 {
-                    this.builder.Append(((float) value).ToString(CultureInfo.InvariantCulture));
+                    float floatValue = (float)value;
+                    string strValue = floatValue.ToString("G17", CultureInfo.InvariantCulture);
+                    if (!strValue.Contains("."))
+                    {
+                        strValue += ".0";
+                    }
+                    this.builder.Append(strValue);
                 } 
-                else if (value is double
-                    || value is decimal) 
+                else if (value is double || value is decimal) 
                 {
-                    this.builder.Append(Convert.ToDouble(value).ToString(CultureInfo.InvariantCulture));
+                    double doubleValue = Convert.ToDouble(value);
+                    string strValue = doubleValue.ToString("G17", CultureInfo.InvariantCulture);
+                    if (!strValue.Contains("."))
+                    {
+                        strValue += ".0";
+                    }
+                    this.builder.Append(strValue);
                 } 
                 else if (value is int
                     || value is uint

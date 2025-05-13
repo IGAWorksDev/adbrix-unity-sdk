@@ -88,6 +88,7 @@ public class AdbrixAndroid : IAdbrix {
     public void BlockDeferredDeepLinkLaunch(AdbrixDeepLinkCallback callback) {
         AdbrixUnityBridge.Call("blockDeferredDeepLinkLaunch", new AdbrixDeepLinkCallbackConnector(callback));
     }
+    public void ATTAuthorized(bool isAuthorized) {}
 }
 #endif
 }

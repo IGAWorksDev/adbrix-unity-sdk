@@ -81,5 +81,12 @@ namespace AdbrixPlugin
             Binding.BlockDeferredDeepLinkLaunch(callback);
 #endif
         }
+
+        public static void ATTAuthorized(bool isAuthorized)
+        {
+#if UNITY_IOS && UNITY_IPHONE
+            Binding.ATTAuthorized(isAuthorized);
+#endif
+        }
     }
 }

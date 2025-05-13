@@ -108,7 +108,12 @@
 
 - (BOOL)adbrix_application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler 
 {
-    
+    if ([userActivity.activityType isEqualToString:NSUserActivityTypeBrowsingWeb]) {
+        NSURL *url = userActivity.webpageURL;
+        if (url) {
+            [[Adbrix shared] deepLinkOpenWithUrl:url];
+        }
+    }
     
     if ([self respondsToSelector:@selector(adbrix_application:continueUserActivity:restorationHandler:)])
         return [self adbrix_application:application continueUserActivity:userActivity restorationHandler:restorationHandler];
