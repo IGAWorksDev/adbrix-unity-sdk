@@ -4,7 +4,7 @@
         <androidPackage spec="com.igaworks.adbrix:android-sdk:3.0.1"/>
         <androidPackage spec="com.igaworks.adbrix:unity-extension:1.0.1"/>
         <androidPackage spec="com.android.installreferrer:installreferrer:2.2"/>
-    
+        <androidPackage spec="com.google.android.gms:play-services-ads-identifier:18.0.1"/>
     </androidPackages>
     <iosPods>
         <iosPod name="adbrix2.0" version="3.0.1" addToAllTargets="true"/>
