@@ -1,3 +1,39 @@
+## 1.1.1 (2025-05-20)
+
+<details open>
+ <summary>EN</summary>
+
+##### Added
+
+- Added [com.google.android.gms:play-services-ads-identifier](https://developers.google.com/android/guides/setup) dependency to Android platform in External Dependency Manager for Unity.
+
+##### Versions
+
+- Android
+  - Adbrix Android SDK 3.0.1
+  - Adbrix Android Unity Extension 1.0.1
+- iOS
+  - Adbrix iOS SDK 1.0.1
+
+</details>
+<details open>
+ <summary>KO</summary>
+
+##### 추가됨
+
+External Dependency Manager for Unity의 Android 플랫폼에 [com.google.android.gms:play-services-ads-identifier](https://developers.google.com/android/guides/setup) 의존성 추가.
+
+##### 버전 정보
+
+- Android
+  - Adbrix Android SDK 3.0.1
+  - Adbrix Android Unity Extension 1.0.1
+- iOS
+  - Adbrix iOS SDK 1.0.1
+
+</details>
+
+
 ## 1.1.0 (2025-05-13)
 <details open>
  <summary>EN</summary>
@@ -34,7 +70,7 @@
 
 </details>
 
-## 1.0.0 (2024-04-24)
+## 1.0.0 (2025-04-24)
 <details open>
  <summary>EN</summary>
 
