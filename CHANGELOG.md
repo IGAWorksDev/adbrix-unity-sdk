@@ -1,3 +1,37 @@
+## 1.1.3 (2025-06-10)
+
+<details open>
+ <summary>EN</summary>
+
+##### Notes
+
+- Updated the Adbrix Android SDK from 3.0.2 to 3.0.3.
+
+##### Versions
+
+- Android
+  - Adbrix Android SDK 3.0.3
+  - Adbrix Android Unity Extension 1.0.1
+- iOS
+  - Adbrix iOS SDK 1.0.1
+
+</details>
+<details open>
+ <summary>KO</summary>
+
+##### 주요 사항
+
+- Adbrix Android SDK가 3.0.2에서 3.0.3로 변경되었습니다.
+
+##### 버전 정보
+
+- Android
+  - Adbrix Android SDK 3.0.3
+  - Adbrix Android Unity Extension 1.0.1
+- iOS
+  - Adbrix iOS SDK 1.0.1
+
+</details>
 ## 1.1.2 (2025-06-05)
 
 <details open>
