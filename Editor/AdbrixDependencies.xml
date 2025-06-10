@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <dependencies>
     <androidPackages>
-        <androidPackage spec="com.igaworks.adbrix:android-sdk:3.0.2"/>
+        <androidPackage spec="com.igaworks.adbrix:android-sdk:3.0.3"/>
         <androidPackage spec="com.igaworks.adbrix:unity-extension:1.0.1"/>
         <androidPackage spec="com.android.installreferrer:installreferrer:2.2"/>
         <androidPackage spec="com.google.android.gms:play-services-ads-identifier:18.0.1"/>
