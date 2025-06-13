@@ -25,7 +25,9 @@ public class AdbrixAndroid : IAdbrix {
             if (adbrixUnityBridge != null) {
                 return adbrixUnityBridge;
             }
-            adbrixUnityBridge = new AndroidJavaObject("com.igaworks.adbrix.unity.AdbrixUnityBridge");
+            AndroidJavaClass adbrixBridgeClass = new AndroidJavaClass("com.igaworks.adbrix.unity.AdbrixUnityBridge");
+            AndroidJavaObject adbrixBridgeInstance = adbrixBridgeClass.CallStatic<AndroidJavaObject>("getInstance");
+            adbrixUnityBridge = adbrixBridgeInstance;
             return adbrixUnityBridge;
         }
     }
