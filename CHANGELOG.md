@@ -1,3 +1,46 @@
+## 1.1.5 (2025-06-18)
+
+<details open>
+ <summary>EN</summary>
+
+##### Fixed
+
+- Fixed an issue where item properties were missing when delivering items with custom key-value pairs on iOS.
+
+##### Notes
+
+- Updated the Adbrix iOS SDK from 3.0.1 to 3.0.2.
+
+##### Versions
+
+- Android
+  - Adbrix Android SDK 3.0.4
+  - Adbrix Android Unity Extension 1.0.2
+- iOS
+  - Adbrix iOS SDK 3.0.2
+
+</details>
+<details open>
+ <summary>KO</summary>
+
+##### 고쳐짐
+
+- iOS에서 상품(Item) 전달 시 커스텀 키 밸류값이 들어가면 누락되는 문제를 해결했습니다.
+
+##### 주요 사항
+
+- Adbrix iOS SDK가 3.0.1에서 3.0.2로 변경되었습니다.
+
+##### 버전 정보
+
+- Android
+  - Adbrix Android SDK 3.0.4
+  - Adbrix Android Unity Extension 1.0.2
+- iOS
+  - Adbrix iOS SDK 3.0.2
+
+</details>
+
 ## 1.1.4 (2025-06-13)
 
 <details open>
@@ -18,7 +61,7 @@
   - Adbrix Android SDK 3.0.4
   - Adbrix Android Unity Extension 1.0.2
 - iOS
-  - Adbrix iOS SDK 1.0.1
+  - Adbrix iOS SDK 3.0.1
 
 </details>
 <details open>
@@ -39,7 +82,7 @@
   - Adbrix Android SDK 3.0.4
   - Adbrix Android Unity Extension 1.0.2
 - iOS
-  - Adbrix iOS SDK 1.0.1
+  - Adbrix iOS SDK 3.0.1
 
 </details>
 
@@ -58,7 +101,7 @@
   - Adbrix Android SDK 3.0.3
   - Adbrix Android Unity Extension 1.0.1
 - iOS
-  - Adbrix iOS SDK 1.0.1
+  - Adbrix iOS SDK 3.0.1
 
 </details>
 <details open>
@@ -74,7 +117,7 @@
   - Adbrix Android SDK 3.0.3
   - Adbrix Android Unity Extension 1.0.1
 - iOS
-  - Adbrix iOS SDK 1.0.1
+  - Adbrix iOS SDK 3.0.1
 
 </details>
 
@@ -93,7 +136,7 @@
   - Adbrix Android SDK 3.0.2
   - Adbrix Android Unity Extension 1.0.1
 - iOS
-  - Adbrix iOS SDK 1.0.1
+  - Adbrix iOS SDK 3.0.1
 
 </details>
 <details open>
@@ -109,7 +152,7 @@
   - Adbrix Android SDK 3.0.2
   - Adbrix Android Unity Extension 1.0.1
 - iOS
-  - Adbrix iOS SDK 1.0.1
+  - Adbrix iOS SDK 3.0.1
 
 </details>
 
@@ -128,7 +171,7 @@
   - Adbrix Android SDK 3.0.1
   - Adbrix Android Unity Extension 1.0.1
 - iOS
-  - Adbrix iOS SDK 1.0.1
+  - Adbrix iOS SDK 3.0.1
 
 </details>
 <details open>
@@ -144,7 +187,7 @@ External Dependency Manager for Unity의 Android 플랫폼에 [com.google.androi
   - Adbrix Android SDK 3.0.1
   - Adbrix Android Unity Extension 1.0.1
 - iOS
-  - Adbrix iOS SDK 1.0.1
+  - Adbrix iOS SDK 3.0.1
 
 </details>
 
@@ -164,7 +207,7 @@ External Dependency Manager for Unity의 Android 플랫폼에 [com.google.androi
   - Adbrix Android SDK 3.0.1
   - Adbrix Android Unity Extension 1.0.0
 - iOS
-  - Adbrix iOS SDK 1.0.1
+  - Adbrix iOS SDK 3.0.1
 
 </details>
 <details open>
@@ -181,7 +224,7 @@ External Dependency Manager for Unity의 Android 플랫폼에 [com.google.androi
   - Adbrix Android SDK 3.0.1
   - Adbrix Android Unity Extension 1.0.0
 - iOS
-  - Adbrix iOS SDK 1.0.1
+  - Adbrix iOS SDK 3.0.1
 
 </details>
 
@@ -215,6 +258,6 @@ External Dependency Manager for Unity의 Android 플랫폼에 [com.google.androi
   - Adbrix Android SDK 3.0.0
   - Adbrix Android Unity Extension 1.0.0
 - iOS
-  - Adbrix iOS SDK 1.0.0
+  - Adbrix iOS SDK 3.0.0
 
 </details>
