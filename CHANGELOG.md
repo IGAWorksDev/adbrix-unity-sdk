@@ -1,3 +1,38 @@
+## 1.1.6 (2025-07-01)
+
+<details open>
+ <summary>EN</summary>
+
+##### Notes
+
+- Updated the Adbrix Android SDK from 3.0.4 to 3.0.5.
+
+##### Versions
+
+- Android
+  - Adbrix Android SDK 3.0.5
+  - Adbrix Android Unity Extension 1.0.2
+- iOS
+  - Adbrix iOS SDK 3.0.2
+
+</details>
+<details open>
+ <summary>KO</summary>
+
+##### 주요 사항
+
+- Adbrix Android SDK가 3.0.4에서 3.0.5로 변경되었습니다.
+
+##### 버전 정보
+
+- Android
+  - Adbrix Android SDK 3.0.5
+  - Adbrix Android Unity Extension 1.0.2
+- iOS
+  - Adbrix iOS SDK 3.0.2
+
+</details>
+
 ## 1.1.5 (2025-06-18)
 
 <details open>
@@ -242,7 +277,7 @@ External Dependency Manager for Unity의 Android 플랫폼에 [com.google.androi
   - Adbrix Android SDK 3.0.0
   - Adbrix Android Unity Extension 1.0.0
 - iOS
-  - Adbrix iOS SDK 1.0.0
+  - Adbrix iOS SDK 3.0.0
 
 </details>
 <details open>
