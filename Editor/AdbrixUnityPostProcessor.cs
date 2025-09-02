@@ -3,8 +3,10 @@ using System.IO;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.Callbacks;
+#if UNITY_IOS
 using UnityEditor.iOS.Xcode;
 using UnityEditor.iOS.Xcode.Extensions;
+#endif
 using UnityEngine;
 using UnityEditor.Android;
 using System.Xml;
@@ -109,6 +111,7 @@ namespace AdbrixPlugin.Editor
             }
         }
         
+        #if UNITY_IOS
         [PostProcessBuild(999)] 
         public static void OnPostprocessBuild(BuildTarget buildTarget, string path)
         {
@@ -161,5 +164,6 @@ namespace AdbrixPlugin.Editor
                 Debug.LogError($"[AdbrixUnity] Error processing iOS build: {e.Message}\n{e.StackTrace}");
             }
         }
+        #endif
     }
 }
