@@ -7,6 +7,6 @@
         <androidPackage spec="com.google.android.gms:play-services-ads-identifier:18.0.1"/>
     </androidPackages>
     <iosPods>
-        <iosPod name="adbrix2.0" version="3.0.3" addToAllTargets="true"/>
+        <iosPod name="adbrix2.0" version="3.1.0" addToAllTargets="true"/>
     </iosPods>
 </dependencies>
