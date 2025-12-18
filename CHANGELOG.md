@@ -3,6 +3,19 @@
 
 
 
+
+## 1.2.1 (2025-12-18)
+
+##### Fixed
+- Bug fixed
+
+##### Versions
+
+- **Android**
+  - Adbrix Android SDK 3.0.7
+  - Adbrix Android Unity Extension 1.0.2
+- **iOS**
+  - Adbrix iOS SDK 3.1.0
 ## 1.2.0 (2025-11-06)
 
 ##### Added
@@ -164,6 +177,19 @@
 
 
 
+
+## 1.2.1 (2025-12-18)
+
+##### 고쳐짐
+- 버그 수정
+
+##### 버전 정보
+
+- **Android**
+  - Adbrix Android SDK 3.0.7
+  - Adbrix Android Unity Extension 1.0.2
+- **iOS**
+  - Adbrix iOS SDK 3.1.0
 ## 1.2.0 (2025-11-06)
 
 ##### 추가됨
