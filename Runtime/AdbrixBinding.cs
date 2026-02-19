@@ -173,11 +173,23 @@ namespace AdbrixPlugin
 
     public static class ABConfig
     {
-        public const string IOS_LOG_ENABLE = "df_config_log_enable";
+        [Obsolete("Use IOS_LOG_LEVEL instead.")]
+        public const string IOS_LOG_ENABLE = "setLog";
+        public const string IOS_LOG_LEVEL = "ABLogLevel";
         public const string ANDROID_LOG_ENABLE = "android_log_enable";
         public const string ANDROID_LOG_LEVEL = "android_log_level";
         public const string ANDROID_COLLECT_GOOGLE_ADVERTISING_ID = "android_collect_google_advertising_id";
     }
+
+    public static class ABiOSLogLevel
+    {
+        public const int VERBOSE = 2;
+        public const int DEBUG = 3;
+        public const int INFO = 4;
+        public const int WARN = 5;
+        public const int ERROR = 6;
+    }
+
     public static class ABAndroidLogLevel
     {
         public const int VERBOSE = 2;

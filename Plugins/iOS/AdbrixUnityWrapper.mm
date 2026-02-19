@@ -14,10 +14,19 @@ void _adbrixInitWithConfig(const char* appKey, const char* secretKey, const char
     NSDictionary *config = [NSJSONSerialization JSONObjectWithData:[[NSString stringWithUTF8String:properties] dataUsingEncoding:NSUTF8StringEncoding]
                                                            options:0
                                                              error:nil];
+    NSDictionary *normalizedConfig = config;
+    
+    if ([config isKindOfClass:[NSDictionary class]]) {
+        NSMutableDictionary *mutableConfig = [config mutableCopy];
+        if (mutableConfig[@"ABLogLevel"] != nil) {
+            [mutableConfig removeObjectForKey:@"setLog"];
+        }
+        normalizedConfig = [mutableConfig copy];
+    }
     
     [[Adbrix shared] sdkInitWithAppkey:[NSString stringWithUTF8String:appKey]
                               secretKey:[NSString stringWithUTF8String:secretKey]
-                           extraConfig:config];
+                           extraConfig:normalizedConfig];
 }
 
 void _adbrixLogEvent(const char* eventName) {

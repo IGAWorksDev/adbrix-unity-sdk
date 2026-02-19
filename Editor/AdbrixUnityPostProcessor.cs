@@ -152,8 +152,16 @@ namespace AdbrixPlugin.Editor
                 plist.root.SetBoolean("com.igaworks.adbrix.isBlockDeferredDeepLinkLaunch", settings.isBlockDeferredDeepLinkLaunch);
                 
                 // iOS 로그 설정
-                plist.root.SetBoolean("com.igaworks.adbrix.logenabled", settings.iosLogEnabled);
-                Debug.Log($"[AdbrixUnity] Added iOS log enabled setting: {settings.iosLogEnabled}");
+                plist.root.values.Remove("com.igaworks.adbrix.logenabled");
+                if ((int)settings.IOSLogLevel > 0)
+                {
+                    plist.root.SetInteger("com.igaworks.adbrix.loglevel", (int)settings.IOSLogLevel);
+                    Debug.Log($"[AdbrixUnity] Added iOS log level setting: {(int)settings.IOSLogLevel}");
+                }
+                else
+                {
+                    plist.root.values.Remove("com.igaworks.adbrix.loglevel");
+                }
                 
                 // 변경사항 저장
                 plist.WriteToFile(plistPath);

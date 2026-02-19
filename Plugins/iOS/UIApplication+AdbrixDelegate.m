@@ -66,9 +66,11 @@
         return YES;
     }
     
-    NSNumber *logEnabled = [infoDictionary objectForKey:@"com.igaworks.adbrix.logenabled"];
-    if (!logEnabled || ![logEnabled isKindOfClass:[NSNumber class]]) {
-        logEnabled = @NO;
+    NSNumber *logLevel = [infoDictionary objectForKey:@"com.igaworks.adbrix.loglevel"];
+    BOOL hasValidLogLevel = NO;
+    if ([logLevel isKindOfClass:[NSNumber class]]) {
+        NSInteger value = [logLevel integerValue];
+        hasValidLogLevel = (value >= 2 && value <= 6);
     }
     
     NSNumber *attTimeout = [infoDictionary objectForKey:@"com.igaworks.adbrix.att.timeout"];
@@ -81,12 +83,17 @@
         isBlockDeferredDeepLinkLaunch = @NO;
     }
 
+    NSMutableDictionary *extraConfig = [@{
+        @"trackingAuthorizeTimeOutRawValue": attTimeout
+    } mutableCopy];
+
+    if (hasValidLogLevel) {
+        extraConfig[@"ABLogLevel"] = logLevel;
+    }
+
     [[Adbrix shared] sdkInitWithAppkey:appKey
                             secretKey:secretKey
-                          extraConfig:@{
-        @"setLog": logEnabled,
-        @"trackingAuthorizeTimeOutRawValue": attTimeout
-    }];
+                          extraConfig:extraConfig];
     
     if ([isBlockDeferredDeepLinkLaunch boolValue]) {
         [[Adbrix shared] setDeferredDeepLinkDelegate:[AdbrixUnitySharedInstance sharedInstance]];

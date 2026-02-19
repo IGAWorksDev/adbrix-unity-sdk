@@ -9,6 +9,16 @@ public enum AdbrixLogLevel
     Error = 6
 }
 
+public enum AdbrixiOSLogLevel
+{
+    Off = 0,
+    Verbose = 2,
+    Debug = 3,
+    Info = 4,
+    Warn = 5,
+    Error = 6
+}
+
 
 public enum TrackingAuthorizeTimeoutLevel
 {
@@ -67,6 +77,13 @@ public class AdbrixUnitySettings : ScriptableObject
     }
 
     [Header("iOS Log Settings")]
-    [Tooltip("Enable iOS logging")]
-    public bool iosLogEnabled;
+    [Tooltip("Set the iOS log output level (Off disables iOS logging)")]
+    [SerializeField]
+    private AdbrixiOSLogLevel iosLogLevel = AdbrixiOSLogLevel.Off;
+
+    public AdbrixiOSLogLevel IOSLogLevel
+    {
+        get => iosLogLevel;
+        set => iosLogLevel = value;
+    }
 }
