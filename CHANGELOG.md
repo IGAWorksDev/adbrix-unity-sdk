@@ -5,6 +5,30 @@
 
 
 
+## 1.3.0 (2026-11-02)
+
+##### Changed
+- Updated Adbrix Android SDK from 3.0.10 to 4.1.0. [Android]
+- Updated Adbrix iOS SDK (CocoaPods) from 3.2.1 to 3.2.3. [iOS]
+
+##### Added
+- Added `com.google.android.gms:play-services-appset:16.0.2` dependency. [Android]
+- Added Swift Package Manager support for iOS (AdbrixSDK 3.2.4). [iOS]
+- Added Unity External Dependency Manager (UDM) support alongside EDM4U.
+
+##### Notes
+- iOS Resolver now supports both CocoaPods and Swift Package Manager.
+- README updated with installation guide for both UDM and EDM4U.
+
+##### Versions
+
+- **Android**
+  - Adbrix Android SDK 4.1.0
+  - Adbrix Android Unity Extension 1.0.4
+- **iOS**
+  - Adbrix iOS SDK 3.2.3 (CocoaPods)
+  - Adbrix iOS SDK 3.2.4 (Swift Package Manager)
+
 ## 1.2.2 (2026-02-19)
 
 ##### Changed
@@ -200,6 +224,30 @@
 
 
 
+
+## 1.3.0 (2026-11-02)
+
+##### 변경됨
+- Adbrix Android SDK가 3.0.10에서 4.1.0으로 변경되었습니다. [Android]
+- Adbrix iOS SDK(CocoaPods)가 3.2.1에서 3.2.3으로 변경되었습니다. [iOS]
+
+##### 추가됨
+- `com.google.android.gms:play-services-appset:16.0.2` 의존성 추가. [Android]
+- iOS용 Swift Package Manager 지원 추가 (AdbrixSDK 3.2.4). [iOS]
+- Unity External Dependency Manager(UDM) 지원 추가 (기존 EDM4U와 함께 지원).
+
+##### 주요 사항
+- iOS Resolver가 CocoaPods와 Swift Package Manager 모두 지원합니다.
+- UDM 및 EDM4U 설치 가이드가 포함된 README로 업데이트되었습니다.
+
+##### 버전 정보
+
+- **Android**
+  - Adbrix Android SDK 4.1.0
+  - Adbrix Android Unity Extension 1.0.4
+- **iOS**
+  - Adbrix iOS SDK 3.2.3 (CocoaPods)
+  - Adbrix iOS SDK 3.2.4 (Swift Package Manager)
 
 ## 1.2.2 (2026-02-19)
 

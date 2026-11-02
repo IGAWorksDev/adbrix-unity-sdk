@@ -88,7 +88,7 @@ public class AdbrixAndroid : IAdbrix {
         AdbrixUnityBridge.Call<string>("invokeWithEncoding", Json.Serialize(message));
     }
     public void BlockDeferredDeepLinkLaunch(AdbrixDeepLinkCallback callback) {
-        AdbrixUnityBridge.Call("blockDeferredDeepLinkLaunch", new AdbrixDeepLinkCallbackConnector(callback));
+        AdbrixUnityBridge.Call("blockDeferredDeepLinkLaunch", AdbrixUnityActivity, new AdbrixDeepLinkCallbackConnector(callback));
     }
     public void ATTAuthorized(bool isAuthorized) {}
 }

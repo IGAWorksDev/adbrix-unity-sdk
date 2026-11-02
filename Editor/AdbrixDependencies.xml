@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <dependencies>
     <androidPackages>
-        <androidPackage spec="com.igaworks.adbrix:android-sdk:3.0.10"/>
-        <androidPackage spec="com.igaworks.adbrix:unity-extension:1.0.2"/>
+        <androidPackage spec="com.igaworks.adbrix:android-sdk:4.1.0"/>
+        <androidPackage spec="com.igaworks.adbrix:unity-extension:1.0.4"/>
         <androidPackage spec="com.android.installreferrer:installreferrer:2.2"/>
         <androidPackage spec="com.google.android.gms:play-services-ads-identifier:18.0.1"/>
+        <androidPackage spec="com.google.android.gms:play-services-appset:16.0.2"/>
     </androidPackages>
     <iosPods>
-        <iosPod name="adbrix2.0" version="3.2.1" addToAllTargets="true"/>
+        <iosPod name="adbrix2.0" version="3.2.3" addToAllTargets="true"/>
     </iosPods>
+    <remoteSwiftPackage url="https://github.com/IGAWorksDev/adbrix-ios-sdk.git" version="3.2.4">
+        <swiftPackage name="AdbrixSDK" replacesPod="adbrix2.0" target="All"/>
+    </remoteSwiftPackage>
 </dependencies>
