@@ -102,6 +102,40 @@ Assets > External Dependency Manager > Android Resolver > Force Resolve
 **Swift Package Manager:**
 | 패키지 | 버전 |
 |--------|------|
-| [AdbrixSDK](https://github.com/IGAWorksDev/adbrix-ios-sdk) | 3.2.4 |
+| [AdbrixSDK](https://github.com/IGAWorksDev/adbrix-ios-sdk) | 3.2.5 |
 
 iOS Resolver 설정에서 CocoaPods 또는 Swift Package Manager 중 선택 가능합니다.
+
+## iOS UIScene Lifecycle 지원
+
+### 개요
+
+SDK 2.0.0부터 iOS UIScene 생명주기 기반 딥링크 처리를 지원합니다. 이는 Apple TN3187 요구사항과 Unity 2022.3.72f1+ / Unity 6000.x의 Scene 기반 iOS 빌드에 대응합니다.
+
+### 지원 환경
+
+| Unity 버전 | iOS Lifecycle | SDK 동작 |
+|-----------|---------------|----------|
+| 2019.4 ~ 2022.3.71 | AppDelegate | AppDelegate 메서드로 딥링크 처리 |
+| 2022.3.72f1+ | UIScene | SceneDelegate 메서드로 딥링크 처리 |
+| 6000.x (Unity 6) | UIScene | SceneDelegate 메서드로 딥링크 처리 |
+
+### 동작 방식
+
+SDK는 앱 실행 시 자동으로 Scene 생명주기 사용 여부를 감지합니다:
+
+1. **Scene lifecycle 감지됨**: SceneDelegate 메서드를 swizzle하여 딥링크 처리
+   - `scene:willConnectToSession:options:` - 콜드 스타트 딥링크
+   - `scene:openURLContexts:` - 스킴 딥링크 (백그라운드)
+   - `scene:continueUserActivity:` - 유니버설 링크 (백그라운드)
+
+2. **Scene lifecycle 미감지**: 기존 AppDelegate 메서드로 딥링크 처리 (하위 호환)
+
+### 추가 설정 불필요
+
+SDK가 자동으로 적절한 경로를 선택하므로 개발자의 추가 설정은 필요하지 않습니다.
+
+### 참고 자료
+
+- [Apple TN3187: Migrating to the UIKit scene-based life cycle](https://developer.apple.com/documentation/technotes/tn3187-migrating-to-the-uikit-scene-based-life-cycle)
+- [Unity iOS UIScene lifecycle support](https://discussions.unity.com/t/info-apple-update-your-editor-to-receive-uiscene-lifecycle-support/1709065)

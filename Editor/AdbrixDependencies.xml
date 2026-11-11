@@ -10,7 +10,7 @@
     <iosPods>
         <iosPod name="adbrix2.0" version="3.2.3" addToAllTargets="true"/>
     </iosPods>
-    <remoteSwiftPackage url="https://github.com/IGAWorksDev/adbrix-ios-sdk.git" version="3.2.4">
+    <remoteSwiftPackage url="https://github.com/IGAWorksDev/adbrix-ios-sdk.git" version="3.2.5">
         <swiftPackage name="AdbrixSDK" replacesPod="adbrix2.0" target="All"/>
     </remoteSwiftPackage>
 </dependencies>

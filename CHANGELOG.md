@@ -5,20 +5,31 @@
 
 
 
-## 1.3.0 (2026-11-02)
-
-##### Changed
-- Updated Adbrix Android SDK from 3.0.10 to 4.1.0. [Android]
-- Updated Adbrix iOS SDK (CocoaPods) from 3.2.1 to 3.2.3. [iOS]
+## [2.0.0 (2026-11-11)](https://github.com/IGAWorksDev/adbrix-unity-sdk/releases/tag/v2.0.0)
 
 ##### Added
-- Added `com.google.android.gms:play-services-appset:16.0.2` dependency. [Android]
-- Added Swift Package Manager support for iOS (AdbrixSDK 3.2.4). [iOS]
+- Added Swift Package Manager (SPM) support for iOS dependency management. [iOS]
+- Added `play-services-appset` dependency for App Set ID support. [Android]
+  ```groovy
+  implementation("com.google.android.gms:play-services-appset:16.0.2")
+  ```
+- Added iOS UIScene lifecycle support for deep link handling. [iOS]
+  - Supports `scene:willConnectToSession:options:` for cold start deep links
+  - Supports `scene:openURLContexts:` for scheme deep links
+  - Supports `scene:continueUserActivity:` for Universal Links
+  - Automatic detection and swizzling of SceneDelegate class
 - Added Unity External Dependency Manager (UDM) support alongside EDM4U.
 
+##### Changed
+- Android SDK updated to version 4.1.0.
+- Android Unity Extension updated to version 1.0.4.
+- iOS SDK updated to version 3.2.5 (SPM) / 3.2.3 (CocoaPods).
+
 ##### Notes
-- iOS Resolver now supports both CocoaPods and Swift Package Manager.
-- README updated with installation guide for both UDM and EDM4U.
+- [CocoaPods Specs repository will become read-only in December 2026](https://blog.cocoapods.org/CocoaPods-Specs-Repo/). SPM is recommended for Unity iOS builds. Existing CocoaPods configuration remains available with version 3.2.3.
+- This update addresses Apple TN3187 compliance for Xcode 27+ / iOS 27+ where UIScene lifecycle adoption is mandatory.
+- Unity 2022.3.72f1+ and Unity 6000.x use UIScene-based lifecycle by default. This SDK version ensures deep link tracking works correctly in these environments.
+- Legacy AppDelegate-based deep link handling remains functional for backward compatibility.
 
 ##### Versions
 
@@ -26,8 +37,9 @@
   - Adbrix Android SDK 4.1.0
   - Adbrix Android Unity Extension 1.0.4
 - **iOS**
+  - Adbrix iOS SDK 3.2.5 (Swift Package Manager)
   - Adbrix iOS SDK 3.2.3 (CocoaPods)
-  - Adbrix iOS SDK 3.2.4 (Swift Package Manager)
+
 
 ## 1.2.2 (2026-02-19)
 
@@ -225,20 +237,31 @@
 
 
 
-## 1.3.0 (2026-11-02)
-
-##### 변경됨
-- Adbrix Android SDK가 3.0.10에서 4.1.0으로 변경되었습니다. [Android]
-- Adbrix iOS SDK(CocoaPods)가 3.2.1에서 3.2.3으로 변경되었습니다. [iOS]
+## [2.0.0 (2026-11-11)](https://github.com/IGAWorksDev/adbrix-unity-sdk/releases/tag/v2.0.0)
 
 ##### 추가됨
-- `com.google.android.gms:play-services-appset:16.0.2` 의존성 추가. [Android]
-- iOS용 Swift Package Manager 지원 추가 (AdbrixSDK 3.2.4). [iOS]
+- iOS 의존성 관리를 위한 Swift Package Manager(SPM) 지원이 추가되었습니다. [iOS]
+- App Set ID 지원을 위한 `play-services-appset` 의존성 추가. [Android]
+  ```groovy
+  implementation("com.google.android.gms:play-services-appset:16.0.2")
+  ```
+- iOS UIScene 생명주기 기반 딥링크 처리 지원 추가. [iOS]
+  - `scene:willConnectToSession:options:` - 콜드 스타트 딥링크 지원
+  - `scene:openURLContexts:` - 스킴 딥링크 지원
+  - `scene:continueUserActivity:` - 유니버설 링크 지원
+  - SceneDelegate 클래스 자동 감지 및 swizzling
 - Unity External Dependency Manager(UDM) 지원 추가 (기존 EDM4U와 함께 지원).
 
-##### 주요 사항
-- iOS Resolver가 CocoaPods와 Swift Package Manager 모두 지원합니다.
-- UDM 및 EDM4U 설치 가이드가 포함된 README로 업데이트되었습니다.
+##### 변경됨
+- Android SDK가 버전 4.1.0으로 업데이트되었습니다.
+- Android Unity Extension이 버전 1.0.4로 업데이트되었습니다.
+- iOS SDK가 버전 3.2.5 (SPM) / 3.2.3 (CocoaPods)으로 업데이트되었습니다.
+
+##### 참고 사항
+- [CocoaPods Specs 저장소가 2026년 12월 부로 읽기 전용으로 전환](https://blog.cocoapods.org/CocoaPods-Specs-Repo/)되므로 Unity iOS 빌드 시 SPM 사용을 권장합니다. 기존 CocoaPods 설정은 버전 3.2.3으로 계속 사용 가능합니다.
+- Apple TN3187 대응: Xcode 27+ / iOS 27+ 에서 UIScene 생명주기 채택 필수화에 대응합니다.
+- Unity 2022.3.72f1+ 및 Unity 6000.x는 기본적으로 UIScene 기반 생명주기를 사용합니다. 이 SDK 버전은 해당 환경에서 딥링크 트래킹이 정상 동작하도록 보장합니다.
+- 기존 AppDelegate 기반 딥링크 처리는 하위 호환성을 위해 유지됩니다.
 
 ##### 버전 정보
 
@@ -246,8 +269,8 @@
   - Adbrix Android SDK 4.1.0
   - Adbrix Android Unity Extension 1.0.4
 - **iOS**
+  - Adbrix iOS SDK 3.2.5 (Swift Package Manager)
   - Adbrix iOS SDK 3.2.3 (CocoaPods)
-  - Adbrix iOS SDK 3.2.4 (Swift Package Manager)
 
 ## 1.2.2 (2026-02-19)
 
