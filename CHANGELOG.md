@@ -25,6 +25,11 @@
 - Android Unity Extension updated to version 1.0.4.
 - iOS SDK updated to version 3.2.5 (SPM) / 3.2.3 (CocoaPods).
 
+##### Fixed
+- Fixed an issue where deep link URL was not captured on cold start due to SDK initialization timing. [iOS]
+  - Deep link URLs arriving before SDK initialization are now buffered and processed after initialization completes.
+  - Applies to both Info.plist-based and C# script-based initialization methods.
+
 ##### Notes
 - [CocoaPods Specs repository will become read-only in December 2026](https://blog.cocoapods.org/CocoaPods-Specs-Repo/). SPM is recommended for Unity iOS builds. Existing CocoaPods configuration remains available with version 3.2.3.
 - This update addresses Apple TN3187 compliance for Xcode 27+ / iOS 27+ where UIScene lifecycle adoption is mandatory.
@@ -256,6 +261,11 @@
 - Android SDK가 버전 4.1.0으로 업데이트되었습니다.
 - Android Unity Extension이 버전 1.0.4로 업데이트되었습니다.
 - iOS SDK가 버전 3.2.5 (SPM) / 3.2.3 (CocoaPods)으로 업데이트되었습니다.
+
+##### 고쳐짐
+- 콜드 스타트 시 SDK 초기화 타이밍 문제로 딥링크 URL이 누락되던 문제를 수정하였습니다. [iOS]
+  - SDK 초기화 전에 도착한 딥링크 URL을 버퍼링하여 초기화 완료 후 처리하도록 변경되었습니다.
+  - Info.plist 기반 초기화 및 C# 스크립트 기반 초기화 모두 적용됩니다.
 
 ##### 참고 사항
 - [CocoaPods Specs 저장소가 2026년 12월 부로 읽기 전용으로 전환](https://blog.cocoapods.org/CocoaPods-Specs-Repo/)되므로 Unity iOS 빌드 시 SPM 사용을 권장합니다. 기존 CocoaPods 설정은 버전 3.2.3으로 계속 사용 가능합니다.
