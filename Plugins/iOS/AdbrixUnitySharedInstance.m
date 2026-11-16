@@ -1,6 +1,14 @@
 #import "AdbrixUnitySharedInstance.h"
+#import <AdbrixSDK/AdbrixSDK.h>
 
 extern void UnitySendMessage(const char* gameObjectName, const char* methodName, const char* message);
+
+@interface AdbrixUnitySharedInstance ()
+
+@property (nonatomic, assign, readwrite) BOOL sdkInitialized;
+@property (nonatomic, strong) NSMutableArray<NSURL *> *pendingDeepLinkURLs;
+
+@end
 
 @implementation AdbrixUnitySharedInstance
 
@@ -31,7 +39,47 @@ static dispatch_once_t onceToken;
 
 - (instancetype)init {
     self = [super init];
+    if (self) {
+        _sdkInitialized = NO;
+        _pendingDeepLinkURLs = [NSMutableArray array];
+    }
     return self;
+}
+
+- (void)handleDeepLinkURL:(NSURL *)url {
+    if (!url) return;
+    
+    @synchronized(self) {
+        NSLog(@"[AdbrixUnity] handleDeepLinkURL called. sdkInitialized=%@, pendingCount=%lu, url=%@", 
+              self.sdkInitialized ? @"YES" : @"NO", 
+              (unsigned long)self.pendingDeepLinkURLs.count,
+              url.absoluteString);
+        
+        if (self.sdkInitialized) {
+            [[Adbrix shared] deepLinkOpenWithUrl:url];
+            NSLog(@"[AdbrixUnity] Deep link processed immediately: %@", url.absoluteString);
+        } else {
+            [self.pendingDeepLinkURLs addObject:url];
+            NSLog(@"[AdbrixUnity] Deep link queued (SDK not initialized): %@", url.absoluteString);
+        }
+    }
+}
+
+- (void)markSDKInitializedAndFlushPendingDeepLinks {
+    @synchronized(self) {
+        self.sdkInitialized = YES;
+        
+        if (self.pendingDeepLinkURLs.count > 0) {
+            NSLog(@"[AdbrixUnity] Flushing %lu pending deep link(s)", (unsigned long)self.pendingDeepLinkURLs.count);
+            
+            for (NSURL *url in self.pendingDeepLinkURLs) {
+                [[Adbrix shared] deepLinkOpenWithUrl:url];
+                NSLog(@"[AdbrixUnity] Flushed pending deep link: %@", url.absoluteString);
+            }
+            
+            [self.pendingDeepLinkURLs removeAllObjects];
+        }
+    }
 }
 
 - (void)sendDeepLinkToUnity:(NSString *)deepLinkData {

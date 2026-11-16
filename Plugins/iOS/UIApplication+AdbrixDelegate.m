@@ -170,6 +170,9 @@ static Class adbrix_findSceneDelegateClass(void) {
                             secretKey:secretKey
                           extraConfig:extraConfig];
     
+    // Mark SDK as initialized and flush any pending deep links from cold start
+    [[AdbrixUnitySharedInstance sharedInstance] markSDKInitializedAndFlushPendingDeepLinks];
+    
     if ([isBlockDeferredDeepLinkLaunch boolValue]) {
         [[Adbrix shared] setDeferredDeepLinkDelegate:[AdbrixUnitySharedInstance sharedInstance]];
     }

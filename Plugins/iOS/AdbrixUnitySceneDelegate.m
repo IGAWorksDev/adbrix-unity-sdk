@@ -1,5 +1,6 @@
 #import "AdbrixUnitySceneDelegate.h"
 #import "AdbrixUnitySwizzler.h"
+#import "AdbrixUnitySharedInstance.h"
 #import <AdbrixSDK/AdbrixSDK.h>
 #import <objc/runtime.h>
 
@@ -17,11 +18,12 @@
 
 - (void)adbrix_scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions API_AVAILABLE(ios(13.0)) {
     // Handle cold start deep links from connectionOptions
+    // Uses handleDeepLinkURL: to buffer URLs if SDK not yet initialized
     if (connectionOptions.URLContexts.count > 0) {
         for (UIOpenURLContext *context in connectionOptions.URLContexts) {
             NSURL *url = context.URL;
             if (url) {
-                [[Adbrix shared] deepLinkOpenWithUrl:url];
+                [[AdbrixUnitySharedInstance sharedInstance] handleDeepLinkURL:url];
             }
         }
     }
@@ -31,7 +33,7 @@
         if ([userActivity.activityType isEqualToString:NSUserActivityTypeBrowsingWeb]) {
             NSURL *url = userActivity.webpageURL;
             if (url) {
-                [[Adbrix shared] deepLinkOpenWithUrl:url];
+                [[AdbrixUnitySharedInstance sharedInstance] handleDeepLinkURL:url];
             }
         }
     }
@@ -43,11 +45,12 @@
 }
 
 - (void)adbrix_scene:(UIScene *)scene openURLContexts:(NSSet<UIOpenURLContext *> *)URLContexts API_AVAILABLE(ios(13.0)) {
-    // Handle scheme deep links when app is in background
+    // Handle scheme deep links when app is in background (warm start)
+    // SDK should be initialized by this point, but use handleDeepLinkURL for consistency
     for (UIOpenURLContext *context in URLContexts) {
         NSURL *url = context.URL;
         if (url) {
-            [[Adbrix shared] deepLinkOpenWithUrl:url];
+            [[AdbrixUnitySharedInstance sharedInstance] handleDeepLinkURL:url];
         }
     }
     
@@ -58,11 +61,11 @@
 }
 
 - (void)adbrix_scene:(UIScene *)scene continueUserActivity:(NSUserActivity *)userActivity API_AVAILABLE(ios(13.0)) {
-    // Handle Universal Links when app is in background
+    // Handle Universal Links when app is in background (warm start)
     if ([userActivity.activityType isEqualToString:NSUserActivityTypeBrowsingWeb]) {
         NSURL *url = userActivity.webpageURL;
         if (url) {
-            [[Adbrix shared] deepLinkOpenWithUrl:url];
+            [[AdbrixUnitySharedInstance sharedInstance] handleDeepLinkURL:url];
         }
     }
     
