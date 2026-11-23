@@ -7,8 +7,20 @@ Unity용 Adbrix SDK입니다. Android 및 iOS 네이티브 SDK의 C# 인터페�
 
 ## 요구 사항
 
-- Unity 2019.4 이상
+- iOS UIScene lifecycle 지원 Unity 버전 필수 (Xcode 27 대응)
 - External Dependency Manager (EDM4U 또는 UDM)
+
+### 지원 Unity 버전 (iOS UIScene lifecycle)
+
+Xcode 27부터 UISceneDelegate 기반 lifecycle이 필수화됨에 따라, 아래 버전 이상의 Unity가 필요합니다.
+
+| Unity 버전 | 최소 요구 버전 |
+|------------|---------------|
+| Unity 6.5 | 6000.5.0a3+ |
+| Unity 6.4 | 6000.4.0b8+ |
+| Unity 6.3 LTS | 6000.3.8f1+ |
+| Unity 6.0 LTS | 6000.0.68f1+ |
+| Unity 2022 xLTS | 2022.3.72f1+ |
 
 ## 설치
 
@@ -55,9 +67,9 @@ Window > Package Manager > Unity Registry > External Dependency Manager
 
 #### 옵션 B: Google EDM4U
 
-Unity 2019.4 ~ 2022.2 또는 UDM 미지원 환경에서 사용합니다.
+UDM 미지원 환경에서 사용합니다. Swift Package Manager 사용 시 **1.2.187 이상** 버전이 필요합니다.
 
-[EDM4U 릴리스 페이지](https://github.com/googlesamples/unity-jar-resolver/releases)에서 최신 `.unitypackage` 다운로드 후 임포트합니다.
+[EDM4U 릴리스 페이지](https://github.com/googlesamples/unity-jar-resolver/releases)에서 1.2.187 이상 버전의 `.unitypackage` 다운로드 후 임포트합니다.
 
 또는 OpenUPM을 통해 설치:
 ```
@@ -94,17 +106,19 @@ Assets > External Dependency Manager > Android Resolver > Force Resolve
 
 ### iOS
 
-**CocoaPods:**
-| Pod | 버전 |
-|-----|------|
-| adbrix2.0 | 3.2.3 |
+> **주의:** [CocoaPods Specs 저장소가 Read-only 모드로 전환](https://blog.cocoapods.org/CocoaPods-Specs-Repo/)됨에 따라 CocoaPods을 통한 신규 버전 배포가 중단됩니다. Swift Package Manager 사용을 권장합니다.
 
-**Swift Package Manager:**
+**Swift Package Manager (권장):**
 | 패키지 | 버전 |
 |--------|------|
 | [AdbrixSDK](https://github.com/IGAWorksDev/adbrix-ios-sdk) | 3.2.5 |
 
-iOS Resolver 설정에서 CocoaPods 또는 Swift Package Manager 중 선택 가능합니다.
+**CocoaPods (지원 중단 예정):**
+| Pod | 버전 |
+|-----|------|
+| adbrix2.0 | 3.2.3 |
+
+iOS Resolver 설정에서 Swift Package Manager 사용을 권장합니다.
 
 ## iOS UIScene Lifecycle 지원
 
@@ -114,11 +128,13 @@ SDK 2.0.0부터 iOS UIScene 생명주기 기반 딥링크 처리를 지원합니
 
 ### 지원 환경
 
-| Unity 버전 | iOS Lifecycle | SDK 동작 |
-|-----------|---------------|----------|
-| 2019.4 ~ 2022.3.71 | AppDelegate | AppDelegate 메서드로 딥링크 처리 |
-| 2022.3.72f1+ | UIScene | SceneDelegate 메서드로 딥링크 처리 |
-| 6000.x (Unity 6) | UIScene | SceneDelegate 메서드로 딥링크 처리 |
+| Unity 버전 | 최소 요구 버전 | iOS Lifecycle | SDK 동작 |
+|-----------|---------------|---------------|----------|
+| Unity 6.5 | 6000.5.0a3+ | UIScene | SceneDelegate 메서드로 딥링크 처리 |
+| Unity 6.4 | 6000.4.0b8+ | UIScene | SceneDelegate 메서드로 딥링크 처리 |
+| Unity 6.3 LTS | 6000.3.8f1+ | UIScene | SceneDelegate 메서드로 딥링크 처리 |
+| Unity 6.0 LTS | 6000.0.68f1+ | UIScene | SceneDelegate 메서드로 딥링크 처리 |
+| Unity 2022 xLTS | 2022.3.72f1+ | UIScene | SceneDelegate 메서드로 딥링크 처리 |
 
 ### 동작 방식
 

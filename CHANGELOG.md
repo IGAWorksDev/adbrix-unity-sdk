@@ -5,7 +5,7 @@
 
 
 
-## [2.0.0 (2026-11-11)](https://github.com/IGAWorksDev/adbrix-unity-sdk/releases/tag/v2.0.0)
+## [2.0.0 (2026-11-23)](https://github.com/IGAWorksDev/adbrix-unity-sdk/releases/tag/v2.0.0)
 
 ##### Added
 - Added Swift Package Manager (SPM) support for iOS dependency management. [iOS]
@@ -242,7 +242,7 @@
 
 
 
-## [2.0.0 (2026-11-11)](https://github.com/IGAWorksDev/adbrix-unity-sdk/releases/tag/v2.0.0)
+## [2.0.0 (2026-11-23)](https://github.com/IGAWorksDev/adbrix-unity-sdk/releases/tag/v2.0.0)
 
 ##### 추가됨
 - iOS 의존성 관리를 위한 Swift Package Manager(SPM) 지원이 추가되었습니다. [iOS]
