@@ -8,6 +8,7 @@ extern "C" {
 void _adbrixInit(const char* appKey, const char* secretKey) {
     [[Adbrix shared] sdkInitWithAppkey:[NSString stringWithUTF8String:appKey]
                               secretKey:[NSString stringWithUTF8String:secretKey]];
+    [[AdbrixUnitySharedInstance sharedInstance] markSDKInitializedAndFlushPendingDeepLinks];
 }
 
 void _adbrixInitWithConfig(const char* appKey, const char* secretKey, const char* properties) {
@@ -27,6 +28,7 @@ void _adbrixInitWithConfig(const char* appKey, const char* secretKey, const char
     [[Adbrix shared] sdkInitWithAppkey:[NSString stringWithUTF8String:appKey]
                               secretKey:[NSString stringWithUTF8String:secretKey]
                            extraConfig:normalizedConfig];
+    [[AdbrixUnitySharedInstance sharedInstance] markSDKInitializedAndFlushPendingDeepLinks];
 }
 
 void _adbrixLogEvent(const char* eventName) {
